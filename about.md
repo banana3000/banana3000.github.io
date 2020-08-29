@@ -1,15 +1,14 @@
 ---
 layout: page
-title: About
+title: Goals
 permalink: /about/
 ---
 
-Some information about you!
+拯救人生中.
 
-### More Information
+### 1. 
 
-A place to include any other types of information that you'd like to include about yourself.
 
-### Contact me
+### 2. 
 
-[email@domain.com](mailto:email@domain.com)
+[send me an e-mail](mailto:banana30003@outlook.com)
