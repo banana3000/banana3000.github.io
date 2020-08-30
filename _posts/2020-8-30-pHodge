@@ -1,0 +1,40 @@
+---
+layout: post
+title: p进Hodge理论是什么？(一)
+---
+
+p-adic Hodge theory最早的出发点是探究Hodge theory的p进类比，对象从compact smooth manifold over R or C (Kähler)换成了proper "analytic manifold"over Q_p .
+
+当然人们一开始不知道"analytic manifold"的定义，但可以相信它至少应该包括smooth algebraic varieties over Q_p（就像所有smooth projective complex variety都是Kähler的）。合理formulate p-adic rigid analytic space的理论，是伴随着p-adic Hodge theory历史发展的【第一条支线】，例如Tate于1962年创造了第一套可用的rigid analytic space理论，1967年开创了p-adic Hodge theory，这两者都基于他对于elliptic curves乃至abelian varieties这一典型的深入研究，这算是【第二条支线】。
+
+回到Hodge theory，研究一个几何对象的拓扑，最重要的工具之一是cohomology theory，cohomology不消失通常能说明某种obstruction存在。而不同的cohomology theory各有千秋，但有很多共同点（例如维数一致），因此【它们之间应该存在比较和联系（comparison theorem）】，例如Hodge theory告诉我们real manifold的Betti cohomology和de Rham cohomology取实系数后是同构的（de Rham theorem），而complex Kähler manifold的de Rham cohomology取复系数与Dolbeault cohomology是同构的，这给出Hodge decomposition theorem H^k=\oplus_{p+q=k} H^{p,q}，并且该同构与complex conjugation相容。
+
+Hodge decomposition theorem的证明是比较分析的，通常路线是说明de Rham cohomology，Dolbeault cohomology都能被harmonic forms完整表出，dimensions are finite，再说明三个Laplacian算子之间的关系。但硬核的PDE技术以及Kähler这个概念在p-adic Hodge theory中并没有类比，也并非主要关心的对象，我们需要使用不同的路线，略去这部分的介绍。
+
+decomposition theorem引出（各种系数的）Hodge structure的定义，如果我们vary compact Kähler manifolds smoothly，它们的cohomology group仍然同构（Ehresmann's theorem），但上面的Hodge structure是会改变的，研究variation of Hodge structures是一个有意思的问题。所以说【cohomology上的extra structures是重要的】，他是更好的algebraic invariants（并非纯粹的topological invariants）。
+
+并非所有Hodge structure都来自algebraic varieties的cohomology，这又引出一个重要问题：【什么样的Hodge structure来自几何？有什么必要条件，如何分类？】。
+
+一个real Hodge structure就是Deligne torus的一个表示，它的Mumford-Tate group越小说明它越special，而我们还可以研究带有特定结构的Hodge structures（比如说with polarization，weight，Hodge numbers给定），更一般的说法是考虑Deligne torus到其他代数群G的同态（比如说G就是某个Hodge structure的automorphism group）。特定结构的Hodge structures全体的参数空间就是Deligne所说的period domain，最简单的例子是complex upper half plane。A variation of Hodge structures on S就可以方便的理解成一个S到period domain的map，我们称之为period map。来自几何的variation需要满足重要的Griffiths transversality，此时period map称为horizontal的，这件事表明大部分的Hodge structure不是来自几何的。Period domain则具有丰富的结构，是实李群的齐性空间，可以被彻底分类，【理解Period domain的结构和上同调，对理解period map的source是有帮助的】。这也是经典Hodge theory的研究内容。
+
+人们对Hodge theory的理解也是从Abelian varieties开始的，也就是上面所说的【第二条支线】。复环面是最简单的紧复流形，都形如C^n/L，L是一个lattice，上面继承了C^n的Hodge structure of type (1,0), (0,1)，易见复环面这个范畴与Z-Hodge structures of weight (1,0), (0,1)这个范畴是等价的。而complex Abelian varieties无非是可以代数化的复环面，它们对应那些可以被polarize的Z-Hodge structures。它们的Hodge分解定理，是可以直接验证的。
+
+说了这么多，来谈谈p-adic Hodge theory。上面带【】的内容都是存在类比的：
+
+第一，复系数的Betti cohomology可以换成base change到代数闭包后的etale cohomology，de Rham cohomology可以改成algebraic de Rham cohomology，我们仍然期望这两者具有一定联系，这就是诸多comparison theorem的来历。Q_p的代数闭包的完备化叫做C_p，是复数域的类比。类似Hodge分解，我们有Hodge-Tate decomposition for smooth proper varieties over Q_p，就是说etale cohomology H^k和 \oplus_{i+j=k}H^i(X, \Omega^j) \otimes C_p(-i)作为Galois表示是同构的。
+
+这里coherent cohomology H^q(X, \Omega^p)是de Rham cohomology上Hodge filtration的各个graded parts，类比。Hodge-Tate比较定理的历史很久，Tate最早证明了有good reduction的abelian varieties的case，Bloch-Kato证明了dim<p+ord good reduction的case，Faltings证明了一般情况，Scholze证明了一般smoth proper rigid analytic varieties的情况。Tate使用了p-divisible group这一更局部更方便算的工具来处理问题，每一个abelian variety都给出一个p-divisible group，并且后者能recover比较定理两侧的信息。p-divisible groups的分类与p-adic Hodge theory的发展息息相关。
+
+人们后来又寻求de Rham theorem的类比，想直接比较etale和de Rham，但是通过计算P^1或者说G_m的例子，很容易发现C_p这个域太小了，怎么办呢？于是Fontaine等人发明了更多period rings，每个period rings都应该对应一种比较定理，比如base change到B_{dR}就得到了de Rham comparison。另外我们可以考虑reduction和integral model，和有限域的理论联系，对于具有good reduction，semistable reduction的varieties有更精细的比较定理，人们分别构造了B_{crys}，B_{st}。从这一点看，p-adic Hodge theory的理论更为丰富和复杂。
+
+第二，就像研究Hodge structures一样，我们可以抽象地先摆脱几何，发展p进Galois表示的理论，先分类研究满足比较定理的Galois表示，定义表示什么时候是Hodge-Tate，de Rham，crystalline，即满足比较定理的表示称为admissible的，然后再建立一些分类，岂不美哉？Fontaine学派在这方面做了很多工作，定义了各种period rings，对他们的基本性质做了很多分析，创造了(\phi,\Gamma) module等工具方便分类，将Tate证明里发展的ramification theory进一步发扬光大得到Ax-Sen-Tate theorem，证明了著名的两大基本定理 theorem A （Colmez-Fontaine theorem，完全刻画了crystalline representation，crystalline representations和weakly admissible filtered \phi-modules范畴等价，semistable的版本换成filtered (\phi, N)-module）和theorem B （p-adic monodromy theorem，Berger最早证明），可以参考Theory of p-adic Galois Representations一书。
+
+Fontaine还发展了一部分integral p-adic Hodge theory，最著名的是Fontaine-Laffaille theory，用它证明了Il n'y a pas de variété abélienne sur Z.
+
+可以说，p-adic Hodge theory是在研究local p-adic Galois representations的性质与分类，通过具体的线性代数data来描述这些对象。
+
+第三，什么时候来自几何？可以看到来自几何的要满足几何对象的cohomology应该满足的比较定理，对于纯粹的local Galois representation并没有什么好的猜测性描述。但是对于Global p-adic Galois representation（数域的Galois群的表示），它在p处应该满足比较定理，在几乎所有places不分歧，假设一些额外的技术条件（例如绝对不可约），那么我们就期望它来自几何，这是Fontaine-Mazur猜想。
+
+第四，我们可以发展p-adic Hodge structure和p-adic period domain的理论，这就要涉及到FF曲线等现代理论，更多的是几何而非纯粹的线性代数。
+
+第五，Integral p-adic Hodge theory也在7-8年前得到了很大的发展，虽然比较定理naive的整类比是fail的，但是我们有A_inf cohomology theory，插值得到一些结果。
