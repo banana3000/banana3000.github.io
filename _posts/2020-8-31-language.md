@@ -1,5 +1,5 @@
 ---
-layout:post
+layout: post
 title: 第一届国际语言学竞赛的第一题
 ---
 
