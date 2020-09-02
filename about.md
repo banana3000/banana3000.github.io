@@ -14,7 +14,7 @@ permalink: /about/
 
 ### 2.
 
-Grothendieck, 杨德昌，Jonathan Blow， 
+Grothendieck, 杨德昌，王小波，Jonathan Blow， 
 
 [send me an e-mail](mailto:banana30003@outlook.com)
 
